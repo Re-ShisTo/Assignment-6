@@ -16,6 +16,11 @@ const Login = () => {
 
   const user_auth = async (e) => {
     e.preventDefault();
+
+    if (signState === "Sign Up" && password.length < 6) {
+      alert("Password must be at least 6 characters!");
+      return;
+    }
     try {
       if (signState === "Login") {
         await logIn(email, password);
