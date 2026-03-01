@@ -9,12 +9,12 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCxznmMjhf9FxeO0N6ttqyBre6howOs7L0",
-  authDomain: "assignment-6-76fb7.firebaseapp.com",
-  projectId: "assignment-6-76fb7",
-  storageBucket: "assignment-6-76fb7.firebasestorage.app",
-  messagingSenderId: "858247238091",
-  appId: "1:858247238091:web:20732ccd93d20ce549264e",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -26,9 +26,6 @@ const signUp = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
-
-    await signOut(auth);
-
     return user;
   } catch (error) {
     console.log(error);
