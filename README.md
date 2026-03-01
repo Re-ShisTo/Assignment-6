@@ -4,6 +4,6 @@
 
 ### Email : anil7053r@gmail.com
 
-[Live deployment link](https://assignment-6-git-main-re-shistos-projects.vercel.app/login)
+[Live deployment link](assignment-6-git-main-re-shistos-projects.vercel.app)
 
 [overview video link]()
